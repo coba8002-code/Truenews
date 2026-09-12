@@ -1,0 +1,43 @@
+{
+  "name": "트루스아이즈-(trutheyes)-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build",
+    "start": "node server.ts",
+    "lint": "tsc --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/cheerio": "^0.22.35",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.6",
+    "axios": "^1.7.9",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "firebase": "^12.13.0",
+    "firebase-admin": "^13.9.0",
+    "iconv-lite": "^0.7.2",
+    "lucide-react": "^1.14.0",
+    "motion": "^12.35.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.8.1",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.21.0",
+    "vite": "^6.2.0",
+    "youtube-transcript": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2"
+  }
+}

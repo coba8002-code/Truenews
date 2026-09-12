@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User preferences and settings",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "notificationType": { "type": "string", "enum": ["Telegram", "SMS", "Email", "App Push"] },
+        "interestedRegions": { "type": "array", "items": { "type": "string" } },
+        "interestedStocks": { "type": "array", "items": { "type": "string" } },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email"]
+    },
+    "SavedAnalysis": {
+      "title": "Saved Analysis",
+      "description": "A saved TruthEyes forensic analysis report",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "reportData": { "type": "object" },
+        "savedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "reportData", "savedAt"]
+    },
+    "SavedNeutralArticle": {
+      "title": "Saved Neutral Article",
+      "description": "A saved generated neutral fact-check article",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "level": { "type": "string" },
+        "savedAt": { "type": "string", "format": "date-time" },
+        "originalUrl": { "type": "string" }
+      },
+      "required": ["userId", "title", "content", "savedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/users/{userId}/saved_analyses/{analysisId}": {
+      "schema": "SavedAnalysis",
+      "description": "User's saved forensic reports"
+    },
+    "/users/{userId}/saved_neutral_articles/{articleId}": {
+      "schema": "SavedNeutralArticle",
+      "description": "User's saved neutral articles"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "트루스아이즈 (TruthEyes) AI-260313",
+  "description": "뉴스 및 소셜 미디어 콘텐츠에서 허위 정보, 편향성, 논리적 오류를 감지하는 엘리트 미디어 분석 및 객관적 팩트 체크 도구입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

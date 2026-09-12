@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.pause {
+  animation-play-state: paused !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print and PDF Export Stylesheet */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide interactive / unnecessary elements during printing */
+  header,
+  nav,
+  button,
+  .no-print,
+  .print-hide,
+  iframe {
+    display: none !important;
+  }
+
+  /* Printable container format */
+  .printable-area {
+    padding: 20mm 15mm !important;
+    color: #0f172a !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  /* Make dark containers print-friendly with clean borders */
+  div[class*="bg-slate-900"],
+  div[class*="bg-slate-950"],
+  div[class*="bg-black"],
+  div[class*="border-slate-800"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure text is clearly readable in print */
+  h1, h2, h3, h4, p, span {
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  .text-white {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400, .text-slate-500, .text-slate-600 {
+    color: #475569 !important;
+  }
+
+  .text-blue-400, .text-blue-500 {
+    color: #1d4ed8 !important;
+  }
+
+  /* Keep page breaks clean */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Show print certificate header */
+  .print-certificate-header {
+    display: block !important;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+}
+
+.print-certificate-header {
+  display: none;
+}
